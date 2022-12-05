@@ -8,22 +8,23 @@ const crunchInput = (input: string) => {
   let part1 = 0;
   let part2 = 0;
   input.split("\n").forEach((line) => {
+    const ranges = line.split(",").map((range) => {
+      const minmax = range.split("-").map((value) => Number.parseInt(value));
+      return Array.from(
+        { length: minmax[1] - minmax[0] + 1 },
+        (_, i) => minmax[0] + i
+      );
+    });
+    const intersection = ranges[0].filter((value) => ranges[1].includes(value));
     // part 1
-    const ranges = line
-      .split(",")
-      .map((range) => range.split("-").map((value) => Number.parseInt(value)));
     if (
-      (ranges[0][0] >= ranges[1][0] && ranges[0][1] <= ranges[1][1]) ||
-      (ranges[1][0] >= ranges[0][0] && ranges[1][1] <= ranges[0][1])
+      intersection.length === ranges[0].length ||
+      intersection.length === ranges[1].length
     ) {
       part1++;
     }
-    if (
-      (ranges[0][0] >= ranges[1][0] && ranges[0][0] <= ranges[1][1]) ||
-      (ranges[0][1] >= ranges[1][0] && ranges[0][1] <= ranges[1][1]) ||
-      (ranges[1][0] >= ranges[0][0] && ranges[1][0] <= ranges[0][1]) ||
-      (ranges[1][1] >= ranges[0][0] && ranges[1][1] <= ranges[0][1])
-    ) {
+    // part 2
+    if (intersection.length > 0) {
       part2++;
     }
   });
