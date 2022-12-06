@@ -12,7 +12,9 @@ const crunchInput = (input: string) => {
       data.reduce((total, value) => total + Number.parseInt(value), 0)
     )
     .sort((a, b) => b - a);
-  return [data[0], data[0] + data[1] + data[2]];
+  const part1 = data[0];
+  const part2 = data[0] + data[1] + data[2];
+  return [part1, part2];
 };
 
 module.exports = {

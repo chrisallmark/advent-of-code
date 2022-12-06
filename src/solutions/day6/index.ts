@@ -8,9 +8,8 @@ const crunchInput = (input: string) => {
   const START_OF_PACKET_SIZE = 4;
   const START_OF_MESSAGE_SIZE = 14;
   const data = [...input];
-  let part1 = 0;
-  let part2 = 0;
   // part1
+  let part1 = 0;
   for (let i = 0; i <= data.length - START_OF_PACKET_SIZE; i++) {
     if (
       new Set(data.slice(i, i + START_OF_PACKET_SIZE)).size ===
@@ -21,6 +20,7 @@ const crunchInput = (input: string) => {
     }
   }
   // part2
+  let part2 = 0;
   for (let i = 0; i <= input.length - START_OF_MESSAGE_SIZE; i++) {
     if (
       new Set(data.slice(i, i + START_OF_MESSAGE_SIZE)).size ===

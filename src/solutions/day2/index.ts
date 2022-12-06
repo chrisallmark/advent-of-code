@@ -4,24 +4,23 @@ const loadInput = (filename: string) => {
   return readFileSync(`${__dirname}/${filename}`, "utf-8");
 };
 
-const points = (id: string) => {
-  switch (id) {
-    case "A":
-    case "X":
-      return 1;
-    case "B":
-    case "Y":
-      return 2;
-    case "C":
-    case "Z":
-      return 3;
-    /* istanbul ignore next */
-    default:
-      return 0;
-  }
-};
-
 const crunchInput = (input: string) => {
+  const points = (id: string) => {
+    switch (id) {
+      case "A":
+      case "X":
+        return 1;
+      case "B":
+      case "Y":
+        return 2;
+      case "C":
+      case "Z":
+        return 3;
+      /* istanbul ignore next */
+      default:
+        return 0;
+    }
+  };
   const plays = [
     [3, 1, 2], // [rock][lose,draw,win]
     [1, 2, 3], // [paper][lose,draw,win]
