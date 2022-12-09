@@ -7,7 +7,7 @@ const loadInput = (filename: string) => {
 const ropeRunner = (input: string, length: number) => {
   const result = new Set();
   const rope = Array.from(Array(length), (_) => [11, 5]);
-  input.split("\n").forEach((line, iii) => {
+  input.split("\n").forEach((line) => {
     const [direction, count] = line.split(" ");
     for (let i = 0; i < Number.parseInt(count); i++) {
       rope.forEach((knot, index) => {
