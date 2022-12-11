@@ -1,6 +1,6 @@
 const day = require("./index.ts");
 
-const input = day.loadInput("day6.txt");
+const input = day.loadInput("day06.txt");
 
 describe("Day 6", () => {
   test("Load Input", () => {

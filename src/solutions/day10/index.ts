@@ -31,7 +31,7 @@ const crunchInput = (input: string) => {
     if (delay) {
       delay = false;
     } else {
-      const instruction = instructions.shift()?.split(" ");
+      const instruction = instructions.shift()!.split(" ");
       command = instruction![0];
       value = Number.parseInt(instruction![1]) || 0;
       delay = command === "addx";

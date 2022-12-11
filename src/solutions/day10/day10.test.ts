@@ -5,7 +5,7 @@ const input = day.loadInput("day10.txt");
 describe("Day 10", () => {
   test("Load Input", () => {
     expect(input).toMatch(
-      /^addx 15\naddx -11\naddx 6\naddx -3\naddx 5\naddx -1\naddx -8\naddx 13\naddx 4\nnoop/
+      /^addx 15\naddx -11\naddx 6\naddx -3\naddx 5\naddx -1\naddx -8\naddx 13\naddx 4\nnoop\n/
     );
   });
 

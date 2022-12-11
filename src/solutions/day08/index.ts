@@ -10,16 +10,14 @@ const crunchInput = (input: string) => {
     .map((line) => line.split("").map((value) => Number.parseInt(value)));
 
   // part 1
-  const part1 = Array.from(Array(grid.length), (_) =>
-    Array(grid[0].length).fill("")
-  );
+  const part1 = input.split("\n").map((line) => line.split(""));
   // left / right
   for (let i = 0; i < grid.length; i++) {
     let left = -1;
     let right = -1;
     for (let j = 0; j < grid[i].length; j++) {
       if (grid[i][j] > left) {
-        part1[i][j] = "V";
+        part1[i][j] = "X";
         left = grid[i][j];
       }
       if (grid[i][grid[i].length - j - 1] > right) {
@@ -34,7 +32,7 @@ const crunchInput = (input: string) => {
     let bottom = -1;
     for (let j = 0; j < grid.length; j++) {
       if (grid[j][i] > top) {
-        part1[j][i] = "V";
+        part1[j][i] = "X";
         top = grid[j][i];
       }
       if (grid[grid.length - j - 1][i] > bottom) {
