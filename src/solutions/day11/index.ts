@@ -41,7 +41,7 @@ const monkeyMaker = (input: string): Monkey[] => {
       };
     }
     const test = data.match(
-      /Test: divisible by (\d*)\n    If true: throw to monkey (\d*)\n    If false: throw to monkey (\d*)/
+      /Test: divisible by (\d*)\n.*If true: throw to monkey (\d*)\n.*If false: throw to monkey (\d*)/
     );
     if (test) {
       monkey.divisor = Number.parseInt(test[1]);
